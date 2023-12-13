@@ -1,0 +1,6 @@
+Setare
+Parisa
+3 3 3
+r r b
+b b r
+r b r

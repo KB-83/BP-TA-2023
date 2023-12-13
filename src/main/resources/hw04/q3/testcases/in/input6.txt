@@ -1,0 +1,6 @@
+red
+blue
+3 3 3
+b r r
+r b b
+b b b

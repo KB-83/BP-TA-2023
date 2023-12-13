@@ -1,0 +1,7 @@
+rEd
+BLue
+4 3 3
+r r b
+b b r
+r b b
+b r r

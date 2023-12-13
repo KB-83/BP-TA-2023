@@ -1,0 +1,7 @@
+6
+a a
+b b
+c c
+d qwe
+e qwe
+f qwe

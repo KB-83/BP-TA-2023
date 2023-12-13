@@ -1,0 +1,9 @@
+Red
+BlUe
+6 7 4
+n n n n n n n
+n n n n n n n
+b n n n n n n
+r b n n n n n
+r b b b n n n
+r r r b r n n
