@@ -25,8 +25,7 @@ public class StackTestTest {
                 return output;
             }
         }
-        assertTrue(new StackTest().testPush(new CorrectStack()));
-        assertTrue(new StackTest().testPop(new CorrectStack()));
+        assertTrue(new StackTest().testStack(new CorrectStack()));
         class WrongStack implements Stack{
             ArrayList<Integer> elements = new ArrayList<>();
 
@@ -41,8 +40,7 @@ public class StackTestTest {
             }
 
         }
-        assertFalse(new StackTest().testPop(new WrongStack()));
-        assertTrue(new StackTest().testPush(new WrongStack()));
+        assertFalse(new StackTest().testStack(new WrongStack()));
         class FalseStack implements Stack{
             ArrayList<Integer> elements = new ArrayList<>();
 
@@ -58,8 +56,7 @@ public class StackTestTest {
                 return output;
             }
         }
-        assertFalse(new StackTest().testPush(new FalseStack()));
-        assertTrue(new StackTest().testPop(new FalseStack()));
+        assertFalse(new StackTest().testStack(new FalseStack()));
     }
     //this test checking if code handled exceptions
     @Test
@@ -69,7 +66,7 @@ public class StackTestTest {
 
             @Override
             public void push(int i) {
-                elements.add(0, i);
+                elements.add( i);
             }
 
             @Override
@@ -83,8 +80,7 @@ public class StackTestTest {
                 return output;
             }
         }
-        assertFalse(new StackTest().testPush(new ExceptionStack()));
-        assertFalse(new StackTest().testPop(new ExceptionStack()));
+        assertFalse(new StackTest().testStack(new ExceptionStack()));
         test1();
     }
 }

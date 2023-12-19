@@ -31,9 +31,10 @@ public class ListHelperTestTest {
                 list1.sort(new Comparator() {
                     @Override
                     public int compare(Object o1, Object o2) {
-                        return (int)o1 > (int)o2 ? 0:1;
+                        return Integer.compare((int)o1, (int)o2);
                     }
                 });
+                list.emptyList();
                 for (int i = 0 ; i < list1.size() ; i++) {
                     list.add(i,list1.get(i));
                 }

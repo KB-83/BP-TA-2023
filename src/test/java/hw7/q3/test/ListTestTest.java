@@ -22,8 +22,30 @@ public class ListTestTest {
             public int get(int i) {
                 return array.get(i);
             }
+
+            @Override
+            public void emptyList() {
+                array.clear();
+            }
         }
         assertTrue(new ListTest().testList(new CorrectImpl()));
+        class Wrong implements List {
+            ArrayList<Integer> array = new ArrayList<>();
+            @Override
+            public void add(int i,int v) {
+                array.add(i,v);
+            }
+
+            @Override
+            public int get(int i) {
+                return array.get(i);
+            }
+
+            @Override
+            public void emptyList() {
+            }
+        }
+        assertFalse(new ListTest().testList(new Wrong()));
         class WrongImpl implements List {
             ArrayList<Integer> array = new ArrayList<>();
                 @Override
@@ -38,6 +60,11 @@ public class ListTestTest {
                     }
                     return array.get(i);
                 }
+
+            @Override
+            public void emptyList() {
+                array.clear();
+            }
         }
         assertFalse(new ListTest().testList(new WrongImpl()));
     }
@@ -61,6 +88,11 @@ public class ListTestTest {
                     return 0;
                 }
 
+            }
+
+            @Override
+            public void emptyList() {
+                array.clear();
             }
         }
         assertFalse(new ListTest().testList(new ExceptionList()));
