@@ -19,10 +19,7 @@ public class ListTestTest {
             }
 
             @Override
-            public int get(int i) throws Exception {
-                if(i < 0 || i >= array.size()) {
-                    throw new Exception();
-                }
+            public int get(int i) {
                 return array.get(i);
             }
         }
@@ -35,10 +32,7 @@ public class ListTestTest {
                 }
 
                 @Override
-                public int get(int i) throws Exception {
-                    if(i < 0 || i >= array.size()) {
-                        throw new Exception();
-                    }
+                public int get(int i) {
                     if (i >= 5){
                         return 0;
                     }
@@ -50,19 +44,26 @@ public class ListTestTest {
 
     @Test
     public void test2(){
-        class Exception implements List {
+        class ExceptionList implements List {
             ArrayList<Integer> array = new ArrayList();
             @Override
             public void add(int i,int v) {
-                array.add(i,v);
+                try {
+                    array.add(i, v);
+                }catch (Exception e){}
             }
 
             @Override
             public int get(int i) {
-                return array.get(i);
+                try {
+                    return array.get(i);
+                }catch (Exception e) {
+                    return 0;
+                }
+
             }
         }
-        assertFalse(new ListTest().testList(new Exception()));
+        assertFalse(new ListTest().testList(new ExceptionList()));
         test1();
     }
 }

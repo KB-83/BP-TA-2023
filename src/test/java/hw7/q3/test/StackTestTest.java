@@ -19,10 +19,7 @@ public class StackTestTest {
             }
 
             @Override
-            public int pop() throws Exception {
-                if(elements.size() == 0){
-                    throw new Exception();
-                }
+            public int pop() {
                 int output = elements.get(elements.size() - 1);
                 elements.remove(elements.size() - 1);
                 return output;
@@ -39,10 +36,7 @@ public class StackTestTest {
             }
 
             @Override
-            public int pop() throws Exception {
-                if(elements.size() == 0){
-                    throw new Exception();
-                }
+            public int pop() {
                 return elements.get(elements.size() - 1);
             }
 
@@ -58,10 +52,7 @@ public class StackTestTest {
             }
 
             @Override
-            public int pop() throws Exception {
-                if(elements.size() == 0){
-                    throw new Exception();
-                }
+            public int pop(){
                 int output = elements.get(elements.size() - 1);
                 elements.remove(elements.size() - 1);
                 return output;
@@ -73,18 +64,22 @@ public class StackTestTest {
     //this test checking if code handled exceptions
     @Test
     public void test2(){
-        class ExceptionStack implements Stack{
+        class ExceptionStack implements Stack {
             ArrayList<Integer> elements = new ArrayList<>();
 
             @Override
             public void push(int i) {
-                elements.add(elements.size(),i);
+                elements.add(0, i);
             }
 
             @Override
             public int pop() {
-                int output = elements.get(elements.size() - 1);
-                elements.remove(elements.size() - 1);
+                int output = 0;
+                try {
+                    output = elements.get(elements.size() - 1);
+                    elements.remove(elements.size() - 1);
+                } catch (Exception e) {
+                }
                 return output;
             }
         }
