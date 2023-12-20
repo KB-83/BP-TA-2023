@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
-public class ListTestTest {
+public class ListTesterTest {
 
     @Test
     public void test1() {
@@ -28,7 +28,7 @@ public class ListTestTest {
                 array.clear();
             }
         }
-        assertTrue(new ListTest().testList(new CorrectImpl()));
+        assertTrue(new ListTester().testList(new CorrectImpl()));
         class Wrong implements List {
             ArrayList<Integer> array = new ArrayList<>();
             @Override
@@ -45,7 +45,7 @@ public class ListTestTest {
             public void emptyList() {
             }
         }
-        assertFalse(new ListTest().testList(new Wrong()));
+        assertFalse(new ListTester().testList(new Wrong()));
         class WrongImpl implements List {
             ArrayList<Integer> array = new ArrayList<>();
                 @Override
@@ -66,7 +66,7 @@ public class ListTestTest {
                 array.clear();
             }
         }
-        assertFalse(new ListTest().testList(new WrongImpl()));
+        assertFalse(new ListTester().testList(new WrongImpl()));
     }
 
     @Test
@@ -95,7 +95,7 @@ public class ListTestTest {
                 array.clear();
             }
         }
-        assertFalse(new ListTest().testList(new ExceptionList()));
+        assertFalse(new ListTester().testList(new ExceptionList()));
         test1();
     }
 }

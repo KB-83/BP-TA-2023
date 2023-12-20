@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
-public class StackTestTest {
+public class StackTesterTest {
     @Test
     public void test1(){
         class CorrectStack implements Stack{
@@ -25,7 +25,7 @@ public class StackTestTest {
                 return output;
             }
         }
-        assertTrue(new StackTest().testStack(new CorrectStack()));
+        assertTrue(new StackTester().testStack(new CorrectStack()));
         class WrongStack implements Stack{
             ArrayList<Integer> elements = new ArrayList<>();
 
@@ -40,7 +40,7 @@ public class StackTestTest {
             }
 
         }
-        assertFalse(new StackTest().testStack(new WrongStack()));
+        assertFalse(new StackTester().testStack(new WrongStack()));
         class FalseStack implements Stack{
             ArrayList<Integer> elements = new ArrayList<>();
 
@@ -56,7 +56,7 @@ public class StackTestTest {
                 return output;
             }
         }
-        assertFalse(new StackTest().testStack(new FalseStack()));
+        assertFalse(new StackTester().testStack(new FalseStack()));
     }
     //this test checking if code handled exceptions
     @Test
@@ -80,7 +80,7 @@ public class StackTestTest {
                 return output;
             }
         }
-        assertFalse(new StackTest().testStack(new ExceptionStack()));
+        assertFalse(new StackTester().testStack(new ExceptionStack()));
         test1();
     }
 }

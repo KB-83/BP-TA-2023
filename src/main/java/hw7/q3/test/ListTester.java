@@ -2,7 +2,7 @@ package hw7.q3.test;
 
 import hw7.q3.testable.List;
 
-public class ListTest {
+public class ListTester {
     public boolean testList(List list) {
         boolean a = testAddAndGet(list);
         boolean b = testException(list);

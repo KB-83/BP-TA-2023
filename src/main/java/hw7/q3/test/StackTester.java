@@ -1,9 +1,8 @@
 package hw7.q3.test;
 
-import hw7.q2.ingredients.Sauce;
 import hw7.q3.testable.Stack;
 
-public class StackTest {
+public class StackTester {
     public boolean testStack(Stack stack) {
         boolean a = testPopAndPush(stack);
         boolean b = testException(stack);

@@ -2,7 +2,7 @@ package hw7.q3.test;
 
 import hw7.q3.testable.ListHelper;
 
-public class ListHelperTest {
+public class ListHelperTester {
     public boolean testSort(ListHelper arrayHelper){
         MyList myList = new MyList();
         myList.add(0,4);
@@ -10,6 +10,11 @@ public class ListHelperTest {
         myList.add(2,2);
         myList.add(3,1);
         arrayHelper.sort(myList);
+        // test size
+        if (myList.size() != 4){
+            return false;
+        }
+        //test elements
         for (int i = 0 ; i < myList.size();i++) {
             if (myList.get(i) != i+1){
                 return false;
@@ -24,6 +29,11 @@ public class ListHelperTest {
         myList.add(2,2);
         myList.add(3,1);
         if (arrayHelper.findMax(myList) != 4) {
+            return false;
+        }
+
+        // test integer min value
+        if(arrayHelper.findMax(new MyList()) != Integer.MIN_VALUE){
             return false;
         }
         return true;
